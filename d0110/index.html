@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>关于亚健康</title>
+	</head>
+
+	<body>
+		<style type="text/css">
+			:root{
+				font: 28px/1.5em arial,"微软雅黑",sans-serif;
+			}
+			body,
+			p {
+				margin: 0;
+			}
+			body{
+				position: relative;
+				z-index: 0;
+			}
+			.stage,
+			.page {
+				margin: auto;
+				height: 1334px;
+				width: 750px;
+				position: relative;
+				z-index: -1000;
+				border: 1px solid black;
+				/*overflow: hidden;*/
+			}
+			
+			.draw{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.box{}
+			.stage button,*:focus-visible{
+				background-color: transparent;
+				padding: 0;
+				border: 0;
+				outline: 0;
+			}
+			.stage button img{
+				position: relative;
+			}
+			/*.img{
+				display: inline-block;
+			}*/
+			@keyframes zoom-anm {
+				50% {
+					transform: scale(.9, .9);
+				}
+			}
+			.box{
+				border: 5px dashed #669988;
+				border-radius: 30px;
+				background-color: #fff;
+			}
+			@keyframes anm-mvtn{
+				50%{
+					transform: rotate(720deg);
+					left: 500px;
+				}
+			}
+			@keyframes wordup{
+				50%{bottom: 24px;}
+			}
+		</style>
+		<div class="stage s1">
+			<div class="page p1 active fade" style="background: url(img/p1/main.png);">
+				<div class="draw">
+					<div class="img" style="transform-origin:top left;animation: 1s infinite linear zoom-anm;"><img src="img/sun.png"/></div>
+					<div class="img" style="padding:0 75px;"><img style="width: 100px;animation: 4s infinite linear anm-mvtn;position: relative;left: 0;);" src="img/p1/ball.png"/></div>
+					<div class="img" style="text-align: center;"><img style="width: 600px;" src="img/p1/title.png"/></div>
+					<div class="img" style="position: relative;left:50px;top:50px;animation: 1s infinite linear zoom-anm;"><img src="img/p1/brid.png"/></div>
+					<button class="nextBtn" onclick="nextPage()" style="position: absolute;left:0;right:0;bottom: 5%;margin: auto;"><img src="img/p1/btn1.png"/></button>
+					<button class="musicBtn" onclick="musicPause()" style="position: absolute;right:50px;top: 50px;margin: auto;"><img src="img/p1/btn0.png"/></button>
+				</div>
+				<div class="draw" style="background-color: #fffe;display: flex;flex-direction: column;">
+					<div style="width: 500px;height: 36px;background-color: #609887;color: #fff;position: relative;margin: auto;border-radius: 32px;">
+						<div class="load-prog" style="width: 35px;height: 100%;background-color:#f1990f;position: absolute;top: 0;left: 0;border-radius: 32px;"></div>
+						<div class="load-prec" style="width:100%;height: 100%;text-align: center;position: relative;">7%</div>
+					</div>
+				</div>
+			</div>
+			<div class="page p2" style="background: url(img/2.png);">
+				<div class="draw">
+					<div class="img" style="transform-origin:top left;animation: 1s infinite linear zoom-anm;"><img src="img/sun.png"/></div>
+					<div class="img" style="position: absolute;width:100%;text-align: center;top: 100px;">
+						<span style="position: absolute;right: 0;left:0;top: 0;bottom: 0;margin: auto;line-height: 100px;color: #fff;letter-spacing: 0.5em;">
+							<span style="animation: 2s 0s infinite wordup;position: relative;bottom: 0;">什</span><span style="animation: 2s .2s infinite wordup;position: relative;bottom: 0;">么</span><span style="animation: 2s .3s infinite wordup;position: relative;bottom: 0;">是</span><span style="animation: 2s .4s infinite wordup;position: relative;bottom: 0;">亚</span><span style="animation: 2s .5s infinite wordup;position: relative;bottom: 0;">健</span><span style="animation: 2s .6s infinite wordup;position: relative;bottom: 0;">康</span><span style="animation: 2s .7s infinite wordup;position: relative;bottom: 0;">？</span>
+						</span>
+						<img src="img/圆角矩形 10.png"/>
+					</div>
+					<div class="box" style="margin: auto;left: 70px;right: 70px;position: absolute;top: 200px;bottom: 50px;">
+						<div class="img" style="width: 100%;text-align: center;padding: 50px;box-sizing: border-box;"><img src="img/run.png"/></div>
+						<div class="title-block" style="margin: 24px;padding:0 10px;display: inline-block;background-color: #2b7a50;color: #fff;border-radius: 10px;">
+							临床表现
+						</div>
+						<div class="para" style="margin:0 24px;">
+							①以疲劳，或睡眠紊乱，或疼痛等症状；<br />②以抑郁寡欢，或焦躁不安、急躁易怒，或恐惧胆怯，或短期记忆力下降、注意力不能集中等；<br />③以人际交往频率减低，或人际关系紧张等症状。<br />
+						</div>
+						<div class="title-block" style="margin: 24px;padding:0 10px;display: inline-block;background-color: #2b7a50;color: #fff;border-radius: 10px;">
+							注意事项
+						</div>
+						<div class="para" style="margin:0 24px;">
+							上述3条中的任何一条持续发作3个月以上，可分别被判断为处于躯体亚健康、心理亚健康、社会交往亚健康状态。
+						</div>
+						<button class="nextBtn" onclick="nextPage()" style="position: absolute;left:0;right:0;bottom: 50px;margin: auto;"><img src="img/组 1.png"/></button>
+					</div>
+					<button class="prevBtn" onclick="prevPage()" style="position: absolute;left:50px;top: 50px;margin: auto;"><img src="img/fanhui.png"/></button>
+					<div class=""></div>
+				</div>
+			</div>
+			<div class="page p3" style="background: url(img/2.png);">
+				<div class="draw">
+					<div class="img" style="transform-origin:top left;animation: 1s infinite linear zoom-anm;"><img src="img/sun.png"/></div>
+					<div class="img" style="position: absolute;width:100%;text-align: center;top: 100px;">
+						<span style="position: absolute;right: 0;left:0;top: 0;bottom: 0;margin: auto;line-height: 100px;color: #fff;letter-spacing: 0.5em;">
+							<span style="animation: 2s 0s infinite wordup;position: relative;bottom: 0;">亚</span><span style="animation: 2s .2s infinite wordup;position: relative;bottom: 0;">健</span><span style="animation: 2s .3s infinite wordup;position: relative;bottom: 0;">康</span><span style="animation: 2s .4s infinite wordup;position: relative;bottom: 0;">测</span><span style="animation: 2s .5s infinite wordup;position: relative;bottom: 0;">试</span>
+						</span>
+						<img src="img/圆角矩形 10.png"/>
+					</div>
+					<div class="box" style="margin: auto;left: 70px;right: 70px;position: absolute;top: 200px;bottom: 50px;">
+						<div class="" style="margin:24px;">
+							勾选自己有的症状，我们为您的健康进行准确的测试：
+						</div>
+						<div class="clt" style="margin:0 24px;display: flex;flex-wrap: wrap;">
+						<input type="checkbox" id="cb1" value="1" />
+						<label for="cb1"><p><span>A</span>&nbsp;经常感冒</p></label>
+						<input type="checkbox" id="cb2" value="2" />
+						<label for="cb2"><p><span>B</span>&nbsp;失眠多梦</p></label>
+						<input type="checkbox" id="cb3" value="3" />
+						<label for="cb3"><p><span>C</span>&nbsp;精神压力大</p></label>
+						<input type="checkbox" id="cb4" value="4" />
+						<label for="cb4"><p><span>D</span>&nbsp;注意力不集中</p></label>
+						<input type="checkbox" id="cb5" value="5" />
+						<label for="cb5"><p><span>E</span>&nbsp;记忆力下降</p></label>
+						<input type="checkbox" id="cb6" value="6" />
+						<label for="cb6"><p><span>F</span>&nbsp;焦躁不安</p></label>
+						<input type="checkbox" id="cb7" value="7" />
+						<label for="cb7"><p><span>G</span>&nbsp;恐惧胆怯</p></label>
+						<input type="checkbox" id="cb8" value="8" />
+						<label for="cb8"><p><span>H</span>&nbsp;人际关系紧张</p></label>
+						<input type="checkbox" id="cb9" value="9" />
+						<label for="cb9"><p><span>I</span>&nbsp;睡眠紊乱</p></label>
+						<input type="checkbox" id="cb0" value="0" />
+						<label for="cb0"><p><span>J</span>&nbsp;腰酸背痛</p></label>
+						<style type="text/css">
+							.clt input[type="checkbox"]{
+								display: none;
+							}
+							.clt input[type="checkbox"]+label{
+								position: relative;
+								background-color: #2b7a50;
+								color: #fff;
+								flex-basis: 40%;
+								margin: 5%;
+								height: 2em;
+								line-height: 2em;
+								border-radius: 10px;
+								padding-left: 0.5em;
+								box-sizing: border-box;
+								user-select: none;
+							}
+							.clt input[type="checkbox"]+label p>span{
+								font-size: 0.9em;
+								text-indent: 0.15em;
+								display: inline-block;
+								width: 1em;
+								height: 1em;
+								line-height: 1em;
+								background-color: #fff;
+								color: #2b7a50;
+								border-radius: 50%;
+							}
+							.clt input[type="checkbox"]:checked+label p>span{
+								color: #f00;
+							}
+							.clt input[type="checkbox"]:checked+label{
+								background-color: #2b7a50;
+								background-image: linear-gradient(#fdcc00,#f2a00c);
+								border: 2px solid#fff;
+								box-shadow: 2px 2px 10px #ccc;
+								color: #f00;
+								flex-basis: 40%;
+							}
+							.clt input[type="checkbox"]:checked+label::after{
+								content: "√";
+								font-weight: 900;
+								position: absolute;
+								line-height: 1em;
+								bottom: 2px;
+								right: 2px;
+							}
+						</style>
+						</div>
+						<div class="para" style="font-size: 0.9em;color: #444;margin: 0 24px;">
+							*上述3条中的任何一条持续发作3个月以上，并且经系统检查排除可能导致上述表现的疾病者，可分别被判断为处于躯体亚健康、心理亚健康、社会交往亚健康状态。临床上，上述3种亚健康表现常常相兼出现。
+						</div>
+						<button class="nextBtn" onclick="nextPage();sub()" style="position: absolute;left:0;right:0;bottom: 50px;margin: auto;"><img src="img/组 2.png"/></button>
+					</div>
+					<button class="prevBtn" onclick="prevPage()" style="position: absolute;left:50px;top: 50px;margin: auto;"><img src="img/fanhui.png"/></button>
+				</div>
+			</div>
+			<div class="page p4" style="background: url(img/2.png);">
+				<div class="draw">
+					<div class="img" style="transform-origin:top left;animation: 1s infinite linear zoom-anm;"><img src="img/sun.png"/></div>
+					<div class="img" style="position: absolute;width:100%;text-align: center;top: 100px;">
+						<span style="position: absolute;right: 0;left:0;top: 0;bottom: 0;margin: auto;line-height: 100px;color: #fff;letter-spacing: 0.5em;">
+							<span style="animation: 2s 0s infinite wordup;position: relative;bottom: 0;">亚</span><span style="animation: 2s .2s infinite wordup;position: relative;bottom: 0;">健</span><span style="animation: 2s .3s infinite wordup;position: relative;bottom: 0;">康</span><span style="animation: 2s .4s infinite wordup;position: relative;bottom: 0;">测</span><span style="animation: 2s .5s infinite wordup;position: relative;bottom: 0;">试</span><span style="animation: 2s .6s infinite wordup;position: relative;bottom: 0;">结</span><span style="animation: 2s .7s infinite wordup;position: relative;bottom: 0;">果</span>
+						</span>
+						<img src="img/圆角矩形 10.png"/>
+					</div>
+					<div class="box" style="margin: auto;left: 70px;right: 70px;position: absolute;top: 200px;bottom: 50px;">
+						<div class="" style="text-align:center;height:357px;margin: 50px 0 0;position: relative;background: no-repeat center;background-image: url(img/亚健康指数.png);">
+							<!--<span style="display: inline-block;padding-top: 150px;position: relative;" class="star-prog">
+								<span class="stare-prog">
+									<span style="margin: 0 10px;"><img src="img/stare.png"/></span><span style="margin: 0 10px;"><img src="img/stare.png"/></span><span style="margin: 0 10px;"><img src="img/stare.png"/></span><span style="margin: 0 10px;"><img src="img/stare.png"/></span><span style="margin: 0 10px;"><img src="img/stare.png"/></span>
+								</span><span style="display: inline-flex;overflow: hidden;width: 50%;position: absolute;left: 0;" class="starf-prog">
+									<span style="margin: 0 10px;"><img src="img/starf.png"/></span><span style="margin: 0 10px;"><img src="img/starf.png"/></span><span style="margin: 0 10px;"><img src="img/starf.png"/></span><span style="margin: 0 10px;"><img src="img/starf.png"/></span><span style="margin: 0 10px;"><img src="img/starf.png"/></span>
+								</span>
+							</span>-->
+							<div style="text-align: center;font-weight: 900;color: #fff;position: absolute;bottom:80px;width:100%;font-size: 1.5em;" class="rank">3.0</div>
+						</div>
+						<div style="margin:24px; class="para"">
+							您选择的症状如下：
+						</div>
+						<div style="position:relative;height: 300px;padding: 0 24px;box-sizing: border-box;" class="box578356">
+							<div class="">记忆力下降</div>
+							<div class="">记忆力下降</div>
+							<div class="">记忆力下降</div>
+							<div class="">记忆力下降</div>
+							<div class="">记忆力下降</div>
+							<div class="">记忆力下降</div>
+							<div class="">记忆力下降</div>
+							<div class="">记忆力下降</div>
+							<div class="">记忆力下降</div>
+							<div class="">记忆力下降</div>
+						</div>
+						<style type="text/css">
+								.box578356>*{
+									float: left;
+									width: 40%;
+									height: 15%;
+									margin: 2.5% 5%;
+									background-color:#ededed;
+									border-radius: 10px;
+									text-align: center;
+									color: #f00;
+								}
+							</style>
+						<div class="para" style="font-size: 0.9em;color: #444;margin:24px;">
+							如何改善亚健康状态，您可以点击按钮了解更多知识
+						</div>
+					</div>
+				</div>
+				<div class="draw">
+					<div style="margin:425px auto 0;width: 175px;" class="star-box">
+						<div style="height: 35px;" class="stare-box">
+							<span style="display:inline-block;width:35px;height:35px;background: url(img/stare.png) no-repeat center/cover;"></span><span style="display:inline-block;width:35px;height:35px;background: url(img/stare.png) no-repeat center/cover;"></span><span style="display:inline-block;width:35px;height:35px;background: url(img/stare.png) no-repeat center/cover;"></span><span style="display:inline-block;width:35px;height:35px;background: url(img/stare.png) no-repeat center/cover;"></span><span style="display:inline-block;width:35px;height:35px;background: url(img/stare.png) no-repeat center/cover;"></span>
+						</div>
+						<div style="height: 35px;white-space:nowrap;overflow: hidden;width: 50%;transform: translateY(-35px);" class="starf-box">
+							<div class="">
+							<span style="display:inline-block;width:35px;height:35px;background: url(img/starf.png) no-repeat center/cover;"></span><span style="display:inline-block;width:35px;height:35px;background: url(img/starf.png) no-repeat center/cover;"></span><span style="display:inline-block;width:35px;height:35px;background: url(img/starf.png) no-repeat center/cover;"></span><span style="display:inline-block;width:35px;height:35px;background: url(img/starf.png) no-repeat center/cover;"></span><span style="display:inline-block;width:35px;height:35px;background: url(img/starf.png) no-repeat center/cover;"></span>
+							</div>
+						</div>
+					</div>
+					<button class="nextBtn" onclick="nextPage()" style="position: absolute;left:0;right:0;bottom: 100px;margin: auto;"><img src="img/组 3.png"/></button>
+				</div>
+				<button class="prevBtn" onclick="prevPage()" style="position: absolute;left:50px;top: 50px;margin: auto;"><img src="img/fanhui.png"/></button>
+			</div>
+			<div class="page p5" style="background-image: url(img/bge.png);">
+				<div class="draw">
+					<div style="transform: translateY(300px);" class="img"><img class="report" style="width: 650px;" src="img/bzs.png"/></div>
+					<div style="position:absolute;bottom:0;width: 100%;height: 600px;background: no-repeat center/cover;background-image: url(img/lhx.png);" class="img"></div>
+					<button class="nextBtn turn p2" onclick="nextPage(clet('.page.p1'))" style="position: absolute;left:0;right:0;bottom: 50px;margin: auto;"><img src="img/组 4.png"/></button>
+					<button class="prevBtn" onclick="prevPage()" style="position: absolute;left:50px;top: 50px;margin: auto;"><img src="img/fanhui.png"/></button>
+				</div>
+			</div>
+		</div>
+		<!--交互部分-->
+		<style type="text/css">
+			.stage{overflow: hidden;}
+			.page{
+				display: none;
+				transition: opacity 1s;
+				opacity: 0;
+			}
+			.active{
+				display: block;}
+			.fade{
+				opacity: 1;}
+			.active.page{
+				z-index: -999;}
+			.active.page+.page{
+				display: block;
+				transform: translateY(-100%);
+			}
+			.active .report{
+				animation: 1s 3 linear zoom-anm;
+			}
+			.nextBtn{
+				animation: 1s infinite linear zoom-anm;
+			}
+			.active .stare-box span{
+					transform: translate(0,0);
+			}
+			.active .stare-box span:nth-child(1),
+			.active .starf-box span:nth-child(1){
+				animation: .3s 0s forwards linear enter;
+				transform: translate(-500px,-500px);
+			}
+			.active .stare-box span:nth-child(5),
+			.active .starf-box span:nth-child(5){
+				animation: .6s .2s forwards linear enter;
+				transform: translate(-500px,-500px);
+			}
+			.active .stare-box span:nth-child(2),
+			.active .starf-box span:nth-child(2){
+				animation: .9s .4s forwards linear enter;
+				transform: translate(-500px,-500px);
+			}
+			.active .stare-box span:nth-child(3),
+			.active .starf-box span:nth-child(3){
+				animation: 1.2s .6s forwards linear enter;
+				transform: translate(-500px,-500px);
+			}
+			.active .stare-box span:nth-child(4),
+			.active .starf-box span:nth-child(4){
+				animation: 1.5s .8s forwards linear enter;
+				transform: translate(-500px,-500px);
+			}
+			@keyframes enter{
+				100%{
+					transform: translate(0,0);
+				}
+			}
+		</style>
+		<script type="text/javascript">
+			function clet(str){return document.querySelector(str)}
+			window.onload=function(){
+				let prog=clet('.load-prog')
+				let prec=clet('.load-prec')
+				function progrun(){
+					let precnmb=parseInt(prec.innerHTML)
+					precnmb=precnmb+parseInt(Math.random()*10)+5
+					precnmb=precnmb<=100?precnmb:100
+					prec.innerHTML=precnmb+'%'
+					prog.style.width=precnmb*5+'px'
+					if(precnmb==100){
+						prog.parentElement.parentElement.style.display='none'
+					}else{
+						setTimeout(progrun,400)
+					}
+				}
+				setTimeout(progrun,1000)
+			}
+			function nextPage(node){
+				let nowPage=clet('.active.page')
+				if(!nowPage.nextElementSibling&&!node){return}
+				let nxtPage=nowPage.nextElementSibling
+				if(!!node){nxtPage=node}
+				nxtPage.classList.toggle('active')
+				setTimeout(()=>{
+					nowPage.classList.toggle('active')
+				},500)
+				nxtPage.classList.toggle('fade')
+				nowPage.classList.toggle('fade')
+				return 0
+			}
+			function prevPage(){
+				let nowPage=clet('.active.page')
+				if(!nowPage.previousElementSibling){return}
+				let nxtPage=nowPage.previousElementSibling
+				nxtPage.classList.toggle('active')
+				setTimeout(()=>{
+					nowPage.classList.toggle('active')
+				},500)
+				nxtPage.classList.toggle('fade')
+				nowPage.classList.toggle('fade')
+			}
+			function sub(){
+				let subox=clet('.box578356')
+				let cltox=document.querySelectorAll('.clt input[type="checkbox"]:checked+label')
+				subox.innerHTML=''
+				cltox.forEach(e=>{
+					let i=document.createElement('div')
+					i.innerHTML=e.textContent.slice(2)
+					subox.appendChild(i)
+				})
+				clet('.rank').innerHTML=(0.5*cltox.length).toFixed(1)
+				clet('.starf-box').style.width=(10*cltox.length)+'%'
+			}
+			let bgm=new Audio('./media/bgm.mp3')
+			function musicPause(){
+				if(bgm.paused){
+					bgm.play()
+				}else{
+					bgm.pause()
+				}
+			}
+		</script>
+	</body>
+</html>
