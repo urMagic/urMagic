@@ -343,23 +343,23 @@
 		</style>
 		<script type="text/javascript">
 			function clet(str){return document.querySelector(str)}
-			window.onload=function(){
-				let prog=clet('.load-prog')
-				let prec=clet('.load-prec')
-				function progrun(){
-					let precnmb=parseInt(prec.innerHTML)
-					precnmb=precnmb+parseInt(Math.random()*10)+5
-					precnmb=precnmb<=100?precnmb:100
-					prec.innerHTML=precnmb+'%'
-					prog.style.width=precnmb*5+'px'
-					if(precnmb==100){
-						prog.parentElement.parentElement.style.display='none'
-					}else{
-						setTimeout(progrun,400)
-					}
+			let prog=clet('.load-prog')
+			let prec=clet('.load-prec')
+			
+			function progrun(){
+				let precnmb=parseInt(prec.innerHTML)
+				precnmb=precnmb+parseInt(Math.random()*10)+5
+				precnmb=precnmb<=100?precnmb:100
+				prec.innerHTML=precnmb+'%'
+				prog.style.width=precnmb*5+'px'
+				if(precnmb==100){
+					prog.parentElement.parentElement.style.display='none'
+				}else{
+					setTimeout(progrun,400)
 				}
-				setTimeout(progrun,1000)
 			}
+			setTimeout(progrun,1000)
+			
 			function nextPage(node){
 				let nowPage=clet('.active.page')
 				if(!nowPage.nextElementSibling&&!node){return}
